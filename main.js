@@ -23,6 +23,8 @@ const canvas_input_context = canvas_input.getContext("2d", { willReadFrequently:
 function get_file() {
     return __awaiter(this, void 0, void 0, function* () {
         if (!file_input.files || file_input.files.length === 0) {
+            if (is_image_uploaded)
+                return;
             alert("Please upload a .jpg file");
             is_image_uploaded = false;
             return;
@@ -39,6 +41,8 @@ function get_file() {
             img_input.src = canvas_input.toDataURL("image/jpeg");
             img_input.setAttribute("style", "display: block;");
         }
+        process_btn.disabled = false;
+        process_btn.setAttribute("style", "cursor: pointer;");
     });
 }
 function set_pixel_group(new_img_data, pixel, group_width, group_height, group_x, group_y) {
