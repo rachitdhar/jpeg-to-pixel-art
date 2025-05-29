@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Convert JPEG to Pixel Art</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <h1>Convert JPEG to Pixel Art</h1>
+
+    <input type="file" id="file_input" accept="image/jpeg"/>
+    <button id="custom_file_button">Choose File</button>
+
+    <div>
+        <label for="resolution_input">Enter resolution:</label>
+        <input type="number" id="resolution_input"/>
+        <button id="process_btn">Convert</button>
+    </div>
+
+    <canvas id="canvas_input" style="display: none;"></canvas>
+    <canvas id="canvas_output" style="display: none;"></canvas>
+
+    <div class="image-container">
+        <img id="img_input" style="display: none;" alt="Uploaded Image"/>
+        <img id="img_output" style="display: none;" alt="Processed Output"/>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
