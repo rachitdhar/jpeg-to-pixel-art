@@ -54,6 +54,7 @@ input[type="number"] {
     left: 0;
     top: 0;
     opacity: 0;
+    pointer-events: none;
 }
 
 button {
@@ -62,7 +63,7 @@ button {
     margin: 0.5rem;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
-    cursor: pointer;
+    cursor: auto;
     transition: background-color 0.3s ease;
 }
 

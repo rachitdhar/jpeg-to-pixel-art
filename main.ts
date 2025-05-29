@@ -14,6 +14,8 @@ const canvas_input_context: CanvasRenderingContext2D | null = canvas_input.getCo
 
 async function get_file(): Promise<void> {
     if (!file_input.files || file_input.files.length === 0) {
+        if (is_image_uploaded) return;
+
         alert("Please upload a .jpg file");
         is_image_uploaded = false;
         return;
@@ -32,6 +34,8 @@ async function get_file(): Promise<void> {
         img_input.src = canvas_input.toDataURL("image/jpeg");
         img_input.setAttribute("style", "display: block;");
     }
+    process_btn.disabled = false;
+    process_btn.setAttribute("style", "cursor: pointer;");
 }
 
 function set_pixel_group(new_img_data: ImageData, pixel: number[], group_width: number, group_height: number, group_x: number, group_y: number): void {
