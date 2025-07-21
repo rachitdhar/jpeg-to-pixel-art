@@ -1,0 +1,2 @@
+# ignore js files from language metrics
+main.js linguist-generated
